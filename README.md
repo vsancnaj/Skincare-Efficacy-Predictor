@@ -79,17 +79,17 @@ To utilize datasets from Kaggle for your project, you'll need to configure the K
     # Create the necessary Kaggle directory
     !mkdir ~/.kaggle
 
-    # Copy the kaggle.json file into this directory
-    !cp /content/drive/MyDrive/Springboard/kaggle.json ~/.kaggle/
+    # Copy the kaggle.json file into your directory
+    !cp /your/drive/kaggle.json ~/.kaggle/
 
     # Secure the API token by updating its permissions
     !chmod 600 ~/.kaggle/kaggle.json
 
-    # Download the dataset from the Kaggle competition
-    !kaggle competitions download -c ieee-fraud-detection
+    # Download the dataset from the Kaggle
+    !kaggle datasets download -d nadyinky/sephora-products-and-skincare-reviews
 
     # Unzip the downloaded dataset into the specified directory
-    !unzip /content/ieee-fraud-detection.zip
+    !unzip /content/sephora-products-and-skincare-reviews.zip
     ```
 
 By following these steps, you'll be able to securely set up the Kaggle API on your system and access the datasets required for your project.
