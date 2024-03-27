@@ -1,4 +1,4 @@
-# Hybrid Skincare Recommendation System
+# Skincare Product Recommendation System
 
 Understanding that skincare efficacy is highly individualized. The impact of a product varies significantly across different skin types, with ingredients playing a crucial role in both the potential benefits and risks, such as irritation or allergic reactions. Additionally, this system acknowledges the consumer's interest in finding cost-effective products without compromising on quality. By exploring alternatives and ingredient substitutes that are more readily available, it is often possible to achieve similar results to those of higher-priced items.
 
