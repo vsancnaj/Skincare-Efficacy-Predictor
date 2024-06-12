@@ -1,9 +1,54 @@
-# Skincare Product Recommendation System
+# Hybrid Skincare Recommendation System
 
-Understanding that skincare efficacy is highly individualized. The impact of a product varies significantly across different skin types, with ingredients playing a crucial role in both the potential benefits and risks, such as irritation or allergic reactions. Additionally, this system acknowledges the consumer's interest in finding cost-effective products without compromising on quality. By exploring alternatives and ingredient substitutes that are more readily available, it is often possible to achieve similar results to those of higher-priced items.
+## Project Summary
 
-The Skincare Product Recommendation System introduces a personalized method for suggesting skincare products, capitalizing on user reviews and detailed product data. Its goal is to align users with the skincare items that most closely align with their individual needs and preferences. This system seeks to simplify the often overwhelming process of choosing from the myriad skincare options on the market, thereby improving the shopping experience with customized recommendations. 
+### Introduction
+This project introduces a personalized method for suggesting skincare products, leveraging user reviews and detailed product data. Its goal is to align users with products that match their individual needs and preferences, simplifying the overwhelming process of choosing skincare items and improving the shopping experience with customized recommendations.
 
+### Dataset
+- **Source**: web-scraped from Sephora
+- **Tables**: Multiple review tables and a 'product_info.csv' table with 8494 entries and 27 features.
+- **Focus**: Skincare products categorized into Moisturizers, Treatments & Serums, Cleansers, Eye Care, Masks, and Sunscreen.
+
+### Exploratory Data Analysis
+- **Primary and Secondary Categories**: Skincare is the most populated primary category. Subcategories refined to improve system relevance.
+- **Review Distribution**: Most authors contributed a single review, with a small number of prolific reviewers.
+- **Skin Type Reviews**: Over 60% of reviews come from individuals with combination skin.
+- **Rating Distributions**: Common values around 4-5 stars, with long tails indicating outliers.
+- **Correlation Heatmap**: High positive and negative correlations between specific variables, aiding in feature selection and preprocessing.
+
+### Challenges
+- **Imbalanced Data**: Predominance of reviews from combination skin users and one-time reviewers made it challenging to train models effectively.
+- **Feature Selection**: Extensive visual analysis and dimensionality reduction techniques like PCA were necessary to choose relevant features from the dataset.
+
+### Data Preprocessing
+- **Cleaning**: Essential columns selected, ingredients cleaned and standardized.
+- **Vectorization**: Ingredients transformed using TF-IDF.
+- **Encoding**: Label Encoding for categorical attributes like 'skin_type' and 'secondary_category'.
+- **Normalization**: Numerical features normalized to a common scale.
+- **Interaction Weight**: Calculated to balance product relevance and user preference, enhancing recommendation accuracy.
+
+### Model Selection
+- **Objective**: Balance recall and precision to minimize false positives and maximize recommendation accuracy.
+- **Models Evaluated**: LightFM, k-Nearest Neighbors (k-NN), and Singular Value Decomposition (SVD).
+  - **LightFM**: AUC 0.820
+  - **k-NN**: RMSE 0.282
+  - **SVD**: RMSE 0.256
+
+### Precision-Recall Analysis
+- **LightFM**: Chosen for its robust performance, high AUC score, and ability to integrate both collaborative filtering and content-based methods, ensuring personalized recommendations.
+
+### Final Model Choice
+The LightFM model was selected for its strong capacity to deliver tailored recommendations, evidenced by its superior AUC score and balanced precision-recall metrics.
+
+### Further Work
+1. **Comprehensive Attribute Integration**: Incorporate attributes like submission time and review helpfulness for deeper insights.
+2. **Ensemble Approach**: Combine strengths of SVD and k-NN models to enhance recommendation accuracy.
+3. **Broader Feature Integration**: Include textual review analysis and product attributes for improved personalization.
+4. **User Interface Development**: Create an intuitive interface to foster user engagement and gather feedback.
+5. **Diversity and Novelty**: Prioritize diverse and novel recommendations to uncover less popular but relevant products.
+
+This project aims to refine and expand the capabilities of the recommendation system, ensuring it remains at the forefront of personalization and user satisfaction in the skincare retail industry.
 
 ## Getting Started
 
